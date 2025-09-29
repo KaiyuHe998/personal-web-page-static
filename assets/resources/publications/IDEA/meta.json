@@ -1,0 +1,124 @@
+{
+    "title": "IDEA",
+    "description": "使用了皮尔斯的对于reasoning的定义, Abduction, Deduction, Induction 促进LLM agent学习和掌握新知识的能力,主要目的想要探究目前的LLM是否真的具有像人类一样自主探索发现新的知识的能力,我是这篇论文的第一作者，完成了所有的论文写作与实验。",
+    "project_type": "pdf",
+    "src_file": "../publications/IDEA/../publications/IDEA/../publications/IDEA/../publications/IDEA/../publications/IDEA/../publications/IDEA/../publications/IDEA/../publications/IDEA/IDEA_paper.pdf",
+    "portfolio_src": [
+        "../publications/IDEA/Fig1.png",
+        "../publications/IDEA/Fig2.png",
+        "../publications/IDEA/Fig3.png"
+    ],
+    "portfolio_marker": [
+        "LLM",
+        "Reasoning",
+        "Hypothesis discovery",
+        "Rule Learning"
+    ],
+    "portfolio_marker_highlight": [
+        "ACL 2025"
+    ],
+    "_chapters": {
+        "Abstract": {
+            "page": 1,
+            "description": "提出 RULEARN 基准与 IDEA 推理框架（结合溯因–演绎–归纳），在五个主流 LLM 上显著优于基线，并通过人类对照揭示规则学习差异；代码与数据开源。"
+        },
+        "Introduction": {
+            "page": 1,
+            "description": "论证真实规则学习需满足三原则：交互式环境、细粒度动作空间、未知规则；据此构建含 300 个人工设计谜题的文本交互环境 RULEARN，促使代理通过实验收集观察、形成并迭代假设。"
+        },
+        "Related Works": {
+            "page": 3,
+            "description": "综述 LLM 代理与溯因/演绎/归纳研究，指出多数工作在非交互场景中割裂考察三类推理；现有基准要么基于 QA/静态信息，要么交互动作过于粗粒度，难以支持实验式规则发现。"
+        },
+        "The RULEARN Benchmark": {
+            "page": 3,
+            "description": "包含三类环境：Function Operator（推断隐藏函数参数）、Escape Room（由画作等线索构造密码）、Reactor（依据隐藏字符串合成规则合成目标串）；提供细粒度输入与字符级反馈，规则为人工设计且预训练中不可得。"
+        },
+        "The IDEA Agent": {
+            "page": 5,
+            "description": "IDEA 在“溯因→演绎→归纳”的循环中生成/检验/改进假设，组件含 Goal、Action Space、Memory、Hypothesis、Plan，并给出算法流程；每次假设更新都会触发重规划与后续交互。  "
+        },
+        "Experiment Results": {
+            "page": 5,
+            "description": "总体上，IDEA 相对基线提升成功率约 10%，重复动作减少约 30.2%，但与人类相比仍在探索效率、计划推导与纠错上存在差距。"
+        },
+        "Experiment Settings (5.1)": {
+            "page": 5,
+            "description": "评测于 Gemma-7B、Llama3-8B/70B、GPT-3.5、GPT-4o；对比 ReAct 基线与 Oracle-rule 控制组；温度设为 0，最多 15 步未解则记为失败。"
+        },
+        "Human participants (5.2)": {
+            "page": 6,
+            "description": "共招募 50 名参与者；每人解 3 个随机谜题（三类各 10 个），按 IDEA 的推理流程记录思路；超过 15 步视为失败，并提供界面示例与 IRB 信息。"
+        },
+        "Main Results (5.3)": {
+            "page": 6,
+            "description": "Oracle-rule 在 Escape Room 中接近上限，但在其他类型仍具挑战；IDEA 使多模型总体成功率提升约 10%，而人类整体显著领先（如表 3）。"
+        },
+        "Analysis (5.4)": {
+            "page": 7,
+            "description": "IDEA 以更少步骤解题，早期阶段解题速率更高；但人类在复杂策略调整上更强，凸显 LLM 在交互式规则学习中的瓶颈。"
+        },
+        "Fine-grained Human Evaluation": {
+            "page": 8,
+            "description": "在人类 vs. LLM 的细粒度比较中，人类在“有效归纳率”与所需交互次数上明显占优（≈4 次即可有效归纳），LLM 常难以基于新证据修正假设。"
+        },
+        "Conclusion": {
+            "page": 9,
+            "description": "总结 RULEARN 的三大特性与 IDEA 的循环式推理范式；尽管 IDEA 显著提升 LLM 规则学习能力，但与人类在假设精炼与策略适应上仍有显著差距。"
+        },
+        "Limitations": {
+            "page": 10,
+            "description": "长上下文管理是瓶颈；需要更好地筛选关键观测以应对复杂规则与多步实验。"
+        },
+        "Ethics Statement": {
+            "page": 10,
+            "description": "数据不含个人敏感信息；研究经 IRB 审批，参与者通过校内邮件招募。"
+        },
+        "Acknowledgements": {
+            "page": 10,
+            "description": "致谢相关支持与贡献。"
+        },
+        "References": {
+            "page": 10,
+            "description": "参考文献列表。"
+        },
+        "Appendix": {
+            "page": 18,
+            "description": "附录包含图表、额外统计、代理实现细节、伪代码、提示词与界面示例等。"
+        }
+    },
+    "_keywords": {
+        "RULEARN": {
+            "page": 3
+        },
+        "IDEA": {
+            "page": 5
+        },
+        "Abduction": {
+            "page": 2
+        },
+        "Deduction": {
+            "page": 2
+        },
+        "Induction": {
+            "page": 2
+        },
+        "Function Operator": {
+            "page": 3
+        },
+        "Escape Room": {
+            "page": 4
+        },
+        "Reactor": {
+            "page": 4
+        },
+        "Oracle-rule Agent": {
+            "page": 5,
+            "description": "对照组：直接提供真实规则（ground-truth）。在不同环境下：函数算子/密室/反应器分别给出系数目标、密码生成规则、反应规则与示例，用以上限估计与分析‘会用规则’的难度。"
+        },
+        "ReAct Agent (Baseline)": {
+            "page": 5,
+            "description": "基线：采用 ReAct 推理-行动框架，但不显式执行溯因/演绎/归纳闭环，也不生成明确的 H/P；每步仅基于当前记忆与目标选择动作。"
+        }
+    }
+}

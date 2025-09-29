@@ -1,0 +1,95 @@
+{
+    "title": "EMO chat bot",
+    "description": "这是一款“会读心还会嘴硬”的聊天机器人项目，灵感来自Representation Engineering (RepE) 技术，但我们加料：情绪数据、真假判别、角色扮演，目的就是让LLM既能安慰你，也能在你调侃它时原地开喷🤬。通过PCA提取语义向量，直接操纵模型内部状态，让它像开EQ调音台一样随时切换心情，既能温柔细语，也能Joker式阴阳怪气。",
+    "project_type": "pdf",
+    "src_file": "EMO chat bot.pdf",
+    "portfolio_src": [
+        "../projects/EMO chat bot/Fig1.png",
+        "../projects/EMO chat bot/Fig2.png",
+        "../projects/EMO chat bot/Fig3.png"
+    ],
+    "portfolio_marker": [
+        "LLM Emotion Control",
+        "Representation Engineering",
+        "Role-play"
+    ],
+    "portfolio_marker_highlight": [
+        "Trash talk LLM 🤬"
+    ],
+    "_chapters": {
+        "Abstract": {
+            "page": 1,
+            "description": "扩展RepE框架，融合真假判断数据集与Joker/Batman角色扮演场景，测试LLM在不同情绪、真实性状态和人格风格之间的切换能力，让模型不仅会说真话，还会带着感情和‘人设’说。"
+        },
+        "Introduction": {
+            "page": 1,
+            "description": "指出情绪理解是LLM的短板：多轮对话中容易情绪崩坏或‘面瘫式’回复。本项目不仅要让AI会表达，还要在不同场景下装得像个有脾气的人。"
+        },
+        "Motivation": {
+            "page": 2,
+            "description": "用两个‘重口味’示例告诉你：没情绪修饰的模型像冰箱，冷冰冰；加了情绪修饰的模型能从‘No, I don’t want to eat poop’变成‘Eww, gross...’的生动反应。"
+        },
+        "Objectives": {
+            "page": 3,
+            "description": "三大目标：1）聊天更有梗更有料；2）减少对提示词工程的依赖；3）动态情绪控制——从温暖贴心到毒舌互喷自由切换。"
+        },
+        "Methodology": {
+            "page": 4,
+            "description": "设计输入分析+情绪选择模块，再加响应生成模块；用PCA从模型隐藏层提取情绪方向向量，通过线性加减直接调节输出风格。"
+        },
+        "Dataset Construction": {
+            "page": 6,
+            "description": "三大数据集：GoEmotions等情绪数据（27类情绪）、True/False真假数据（跨6个主题）、Joker/Batman角色对话（200对），让模型学会真话假话、喜怒哀乐和人设切换。"
+        },
+        "Implementation": {
+            "page": 7,
+            "description": "模拟训练：不改模型参数，只在推理时提取目标模块隐藏状态，PCA得到情绪向量；用prompt判断当前情绪标签，再加到隐藏状态中实现风格修饰。"
+        },
+        "Results": {
+            "page": 10,
+            "description": "和‘面瘫’版本相比，EMO系统在互动性和共情力上吊打对手（Engagement和Empathy提升显著），但逻辑一致性略降。"
+        },
+        "Analysis": {
+            "page": 10,
+            "description": "优点：少调prompt、互动更生动、可精细调节、模块可扩展。缺点：情绪一换太猛会掉链子，偶尔增加幻觉率。"
+        },
+        "Lesson Learnt & Future Works": {
+            "page": 12,
+            "description": "未来想把这种PCA情绪向量扩展到其他领域，比如写代码、炒股，甚至更精准的‘垃圾话生成’；同时增强透明度，让别人知道你喷他不是情绪失控，而是科学调参的结果。"
+        }
+    },
+    "_keywords": {
+        "Representation Engineering (RepE)": {
+            "page": 1,
+            "description": "通过操纵LLM内部表示控制输出行为的方法，本项目在其基础上做了情绪+真假+人设扩展。"
+        },
+        "PCA情绪向量": {
+            "page": 7,
+            "description": "用主成分分析从模型隐藏层提取某种情绪的方向向量，推理时直接加到隐藏状态上改变回复风格。"
+        },
+        "GoEmotions": {
+            "page": 6,
+            "description": "包含27类情绪的Reddit评论数据集，本项目用其中6大类+细分子类训练情绪识别。"
+        },
+        "True/False Dataset": {
+            "page": 6,
+            "description": "6084句跨6个主题的真假陈述，用于测试模型的真实性信号提取与切换能力。"
+        },
+        "Joker/Batman Role-play": {
+            "page": 6,
+            "description": "200对角色对话，用来训练模型的阴阳怪气和正义严肃双重人格切换技能。"
+        },
+        "EMO Pipeline": {
+            "page": 4,
+            "description": "输入→情绪选择→隐藏状态加向量→生成输出，全流程模块化，可插拔扩展新情绪。"
+        },
+        "Engagement Metric": {
+            "page": 10,
+            "description": "评估模型回复是否有趣、有梗、像朋友聊天，包括幽默、情绪甚至爆粗。"
+        },
+        "Empathy Metric": {
+            "page": 10,
+            "description": "评估模型是否能安慰、共情和承接对话情绪，而不仅仅是答题机式回复。"
+        }
+    }
+}

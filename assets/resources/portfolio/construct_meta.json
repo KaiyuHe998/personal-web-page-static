@@ -1,0 +1,148 @@
+{
+    "publications": [
+        {
+            "title": "Abductive Reasoning Evaluation",
+            "project_type": "pdf",
+            "portfolio_src": [
+                "../publications/Abductive Reasoning Evaluation/Fig1.png",
+                "../publications/Abductive Reasoning Evaluation/Fig2.png",
+                "../publications/Abductive Reasoning Evaluation/Fig3.png",
+                "../publications/Abductive Reasoning Evaluation/Fig4.png"
+            ],
+            "portfolio_marker": [
+                "LLM",
+                "Abductive reasoning",
+                "Evaluation",
+                "Reinforcement Learning"
+            ],
+            "portfolio_marker_highlight": [
+                "ICLR 2026（under review）"
+            ]
+        },
+        {
+            "title": "Eifficient RAG",
+            "project_type": "pdf",
+            "portfolio_src": [
+                "../publications/Eifficient RAG/Fig1.png",
+                "../publications/Eifficient RAG/Fig2.png",
+                "../publications/Eifficient RAG/Fig3.png"
+            ],
+            "portfolio_marker": [
+                "RAG",
+                "Agentic",
+                "Reinforcement Learning",
+                "Process Rewards",
+                "Search Efficiency"
+            ],
+            "portfolio_marker_highlight": [
+                "ICLR 2026（under review）"
+            ]
+        },
+        {
+            "title": "LLM hypothesis discovery survey",
+            "project_type": "pdf",
+            "portfolio_src": [
+                "../publications/LLM hypothesis discovery survey/Fig1.png",
+                "../publications/LLM hypothesis discovery survey/Fig2.png",
+                "../publications/LLM hypothesis discovery survey/Fig3.png",
+                "../publications/LLM hypothesis discovery survey/Fig4.png"
+            ],
+            "portfolio_marker": [
+                "LLM Reasoning",
+                "LLM Learning",
+                "AGI"
+            ],
+            "portfolio_marker_highlight": [
+                "TMLR survey certification"
+            ]
+        },
+        {
+            "title": "Contact tracing",
+            "project_type": "pdf",
+            "portfolio_src": [
+                "../publications/Contact tracing/Fig1.png",
+                "../publications/Contact tracing/Fig2.png",
+                "../publications/Contact tracing/Fig3.png"
+            ],
+            "portfolio_marker": [
+                "Public Health",
+                "Epidemiology",
+                "Contact Tracing",
+                "Survey Methods",
+                "Machine Learning"
+            ],
+            "portfolio_marker_highlight": [
+                "BMC Public Health 2024"
+            ]
+        },
+        {
+            "title": "IDEA",
+            "project_type": "pdf",
+            "portfolio_src": [
+                "../publications/IDEA/Fig1.png",
+                "../publications/IDEA/Fig2.png",
+                "../publications/IDEA/Fig3.png"
+            ],
+            "portfolio_marker": [
+                "LLM",
+                "Reasoning",
+                "Hypothesis discovery",
+                "Rule Learning"
+            ],
+            "portfolio_marker_highlight": [
+                "ACL 2025"
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "title": "Space simulator",
+            "project_type": null,
+            "portfolio_src": [
+                "../projects/Space simulator/space.gif"
+            ],
+            "portfolio_marker": [
+                "Physics",
+                "3D Game",
+                "Unity",
+                "C#"
+            ],
+            "portfolio_marker_highlight": [
+                "On going"
+            ]
+        },
+        {
+            "title": "EMO chat bot",
+            "project_type": "pdf",
+            "portfolio_src": [
+                "../projects/EMO chat bot/Fig1.png",
+                "../projects/EMO chat bot/Fig2.png",
+                "../projects/EMO chat bot/Fig3.png"
+            ],
+            "portfolio_marker": [
+                "LLM Emotion Control",
+                "Representation Engineering",
+                "Role-play"
+            ],
+            "portfolio_marker_highlight": [
+                "Trash talk LLM 🤬"
+            ]
+        },
+        {
+            "project_type": "outside link",
+            "portfolio_src": [
+                "../projects/Battle-Royale game/topdown_2d.gif"
+            ],
+            "portfolio_marker": [
+                "Physics",
+                "3D Game",
+                "Unity",
+                "C#"
+            ],
+            "portfolio_marker_highlight": [
+                "On going"
+            ],
+            "title": "Battle-Royale game"
+        }
+    ]
+}

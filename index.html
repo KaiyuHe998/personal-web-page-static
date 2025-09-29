@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <link rel="icon" href="./vite.svg">
+  <title>Kaiyu He's Portfolio</title>
+  <script type="module" crossorigin src="./assets/index-574d9553.js"></script>
+  <link rel="stylesheet" href="./assets/index-f3e806ef.css">
+</head>
+<body>
+  <!-- 加载提示 -->
+  <div id="loading-screen" class="loading">
+    <div>Loading Kaiyu He's Portfolio...</div>
+  </div>
+
+  <!-- 主内容容器 - 用于显示个人主页 -->
+  <iframe id="web-container" src="assets/resources/portfolio/portfolio.html" style="opacity: 0;"></iframe>
+
+  
+  <script>
+    // 页面加载函数
+    function loadPage(page) {
+      const iframe = document.getElementById('web-container');
+      const loading = document.getElementById('loading-screen');
+      
+      if (iframe && loading) {
+        loading.style.display = 'block';
+        iframe.style.opacity = '0';
+        
+        iframe.src = `assets/resources/${page}`;
+        
+        iframe.onload = function() {
+          loading.style.display = 'none';
+          iframe.style.opacity = '1';
+        };
+      }
+    }
+
+    // 初始页面加载完成后隐藏loading
+    window.addEventListener('load', function() {
+      const iframe = document.getElementById('web-container');
+      const loading = document.getElementById('loading-screen');
+      
+      setTimeout(() => {
+        if (loading) loading.style.display = 'none';
+        if (iframe) iframe.style.opacity = '1';
+      }, 1000);
+    });
+  </script>
+</body>
+</html>

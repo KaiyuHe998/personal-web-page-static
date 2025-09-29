@@ -1,0 +1,104 @@
+{
+    "title": "Abductive Reasoning Evaluation",
+    "description": "提出面向溯因推理（Abduction）的通用、自动化、透明且无需金标准标签的评测框架 GEAR，从三大维度对一组假设进行评价：一致性（Consistency）、可泛化性（Generalizability）与多样性（Diversity）。基于四个常用数据集（MINI-ARC、ACRE、LIST FUNCTIONS、ARC-2025）与九个LLM，共生成 50,340 个候选假设并开展细粒度比较；结果显示金标准式评测易掩盖多解性，且大模型并不必然带来更高的多样性。进一步提出“动量式课程学习”策略，利用 GEAR 衍生的训练信号在无金标监督下提升一致性、可泛化性与多样性，并把收益迁移到现有溯因基准。",
+    "project_type": "pdf",
+    "src_file": "",
+    "portfolio_src": [
+        "../publications/Abductive Reasoning Evaluation/Fig1.png",
+        "../publications/Abductive Reasoning Evaluation/Fig2.png",
+        "../publications/Abductive Reasoning Evaluation/Fig3.png",
+        "../publications/Abductive Reasoning Evaluation/Fig4.png"
+    ],
+    "portfolio_marker": [
+        "LLM",
+        "Abductive reasoning",
+        "Evaluation",
+        "Reinforcement Learning"
+    ],
+    "portfolio_marker_highlight": [
+        "ICLR 2026（under review）"
+    ],
+    "_chapters": {
+        "Abstract": {
+            "page": 1,
+            "description": "GEAR 以一致性、可泛化性与多样性三指标，对LLM生成的假设集合进行无需金标的可复现评分；在四个基准与九个模型上揭示金标评测的局限与模型差异。"
+        },
+        "Introduction": {
+            "page": 1,
+            "description": "指出“最佳解释推理”(IBE)在真实场景中标准含糊与多解共存问题，金标单参照易排斥同样合理的解释；主张回到皮尔斯式溯因：从观测生成可检验假设，并以可测试性与多样性促进科学发现。"
+        },
+        "Related Works": {
+            "page": 2,
+            "description": "回顾非可推翻(演绎)与可推翻(溯因/归纳)推理的差异，概述金标匹配与人工主观评测两路做法的可扩展性与主观性问题，强调其与溯因本质的冲突。"
+        },
+        "GEAR Framework": {
+            "page": 3,
+            "description": "给出符号体系与三指标的形式化定义：一致性=与已知观测不矛盾；可泛化性=在共享样本空间 S 上产生确定性预测的覆盖度；多样性=基于预测图样的γ/β两类集合层面度量（平均唯一样本预测数与成对雅卡尔离散度）。"
+        },
+        "Consistency (3.1)": {
+            "page": 3,
+            "description": "形式化判定 f(ini)=outi（对所有观测），作为最基本要求并与传统评测对齐。"
+        },
+        "Generalizability (3.2)": {
+            "page": 3,
+            "description": "以共享样本空间 S 为操作化域，比较不同假设在 S 上的预测覆盖度，体现“更大胆可证伪”之优先；通过示例阐明与记忆式假设的差别。"
+        },
+        "Diversity (3.3)": {
+            "page": 4,
+            "description": "摒弃基于文本相似度的“黑箱”多样性，转而以预测分歧刻画结构机制差异，定义 γ-diversity 与 β-diversity，并举例计算。"
+        },
+        "LLM Evaluation Settings": {
+            "page": 4,
+            "description": "描述数据预处理、起始观测采样、生成协议与“质量触发式早停”规则（解析失败/不一致/低新颖度≥0.8 记为坏样本），以保证可比性与避免退化循环。"
+        },
+        "Sample Space S": {
+            "page": 6,
+            "description": "逐数据集构造可复现实验用样本空间 S（含分层采样与固定随机种子），在 LIST FUNCTIONS/ACRE 上做长度/实体数分层采样，在 MINI-ARC/ARC-2025 上收集官方拆分中的唯一网格。"
+        },
+        "Main Analysis & Findings": {
+            "page": 5,
+            "description": "九个LLM共 50,340 个假设（17,835 一致），在早停规则下 GPT-o4-mini 与 GPT-o1 生成更多一致假设并具更高一致率；一致性与起始观测数大小弱相关；模型规模与多样性弱相关；金标评测会误标≈80%同等合理的假设。"
+        },
+        "Momentum-based Curriculum": {
+            "page": 1,
+            "description": "提出基于学习“速度”的动量式课程学习：先优化指令遵循与一致性，随后转向更难的多样性目标；无需金标，以 GEAR 信号驱动偏好式RL + LoRA 微调，三目标均提升并迁移到既有溯因基准。"
+        },
+        "Conclusion": {
+            "page": 1,
+            "description": "GEAR 为溯因提供可扩展、可复现、开放式评估；通过集合层面指标与共享样本空间，真实反映多解性并为无金标训练提供密集信号。"
+        }
+    },
+    "_keywords": {
+        "Abduction (溯因)": {
+            "page": 1
+        },
+        "Consistency": {
+            "page": 3
+        },
+        "Generalizability": {
+            "page": 3
+        },
+        "Diversity (γ / β)": {
+            "page": 4,
+            "description": "γ：平均唯一样本预测数；β：基于预测集合的成对雅卡尔离散度。"
+        },
+        "Sample Space S": {
+            "page": 6
+        },
+        "Quality-triggered Early Stopping": {
+            "page": 5
+        },
+        "LIST FUNCTIONS / ACRE / MINI-ARC / ARC-2025": {
+            "page": 4
+        },
+        "Momentum-based Curriculum Learning": {
+            "page": 1
+        },
+        "Label-free Evaluation": {
+            "page": 1
+        },
+        "Underdetermination (多解性)": {
+            "page": 1
+        }
+    }
+}

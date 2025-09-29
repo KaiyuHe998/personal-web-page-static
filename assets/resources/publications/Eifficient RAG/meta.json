@@ -1,0 +1,97 @@
+{
+    "title": "Eifficient RAG",
+    "description": "提出 HiPRAG：一种分层过程奖励（hierarchical process rewards）用于高效 Agentic RAG 的训练框架。通过将推理轨迹解析为离散步骤，并在答案正确与格式合规的前提下，对每个搜索/非搜索步骤的“最优性”给予额外奖励，从而同时降低 over-search 与 under-search，比强基线在 7 个 QA 基准上取得更高准确率并显著提升搜索效率。:contentReference[oaicite:0]（结构与字段仿照 IDEA 的 meta.json 模板整理。:contentReference[oaicite:1]）",
+    "project_type": "pdf",
+    "src_file": "/mnt/data/Efficient RAG.pdf",
+    "portfolio_src": [
+        "../publications/Eifficient RAG/Fig1.png",
+        "../publications/Eifficient RAG/Fig2.png",
+        "../publications/Eifficient RAG/Fig3.png"
+    ],
+    "portfolio_marker": [
+        "RAG",
+        "Agentic",
+        "Reinforcement Learning",
+        "Process Rewards",
+        "Search Efficiency"
+    ],
+    "portfolio_marker_highlight": [
+        "ICLR 2026（under review）"
+    ],
+    "_chapters": {
+        "Abstract": {
+            "page": 1,
+            "description": "阐述问题：现有 agentic RAG 普遍存在 over-search 与 under-search；提出 HiPRAG，在 RL 训练中引入细粒度、知识校验的过程奖励，按步骤最优性给予加成；在 Qwen2.5 与 Llama-3.2 上跨 7 个 QA 基准优于强基线，同时把 over-search 从 ∼27% 降至 2.3%，并降低 under-search。:contentReference[oaicite:2]"
+        },
+        "Introduction": {
+            "page": 1,
+            "description": "动机：仅优化最终结果不足以约束检索行为的效率与可靠性；现有基于长度/次数惩罚或置信度/知识感知的方案仍是粗粒度信号。目标：直接在每一步判断是否应当检索，并据此塑形。:contentReference[oaicite:3]"
+        },
+        "Related Works": {
+            "page": 2,
+            "description": "回顾 ReAct、Chain-of-Retrieval、DeepRAG、基于 RL 的检索决策（Search-R1, R1-Searcher/++, β-GRPO 等）与过程奖励/自觉检索相关工作，指出其依赖代理置信度或外部奖励模型的局限。:contentReference[oaicite:4]"
+        },
+        "HiPRAG Framework (Method)": {
+            "page": 3,
+            "description": "核心三部分：(1) 可解析的输出结构：将完整 <think> 中嵌套为一序列 <step>，显式区分检索/非检索步骤并记录 <search>/<context>/<reasoning>/<outcome>；(2) 在线检测 over/under-search：对检索步以查询独立再答+外部 LLM 语义等价判定冗余，对非检索步以外部校验器检查事实/逻辑错误；(3) 分层奖励：R(T) = (1−λ_f)·Answer + λ_f·Format + λ_p·Answer·Format·(N_corr/N)，仅当答案与格式正确时才叠加过程加成，以先保正确再促效率。:contentReference[oaicite:5]"
+        },
+        "Datasets & Metric (4.1)": {
+            "page": 5,
+            "description": "训练集：NQ + HotpotQA；评测集：NQ、PopQA、TriviaQA、2WikiMultiHopQA、Bamboogle、HotpotQA、Musique。主指标：Cover Exact Match (CEM)；效率指标：Over-search Rate (OSR) 与 Under-search Rate (USR)。:contentReference[oaicite:6]"
+        },
+        "Baselines (4.2)": {
+            "page": 6,
+            "description": "对比直接推理、标准 RAG、提示式 agentic RAG（IRCoT、Search-o1）与基于 RL 的 agent（Search-R1、R1-Searcher/++、β-GRPO）。:contentReference[oaicite:7]"
+        },
+        "Training Details (4.3)": {
+            "page": 6,
+            "description": "RL 采用 PPO（并报告 GRPO），模型含 Qwen2.5 3B/7B、Llama-3.2-3B（base/instruct）；检索源为 2018 Wikipedia + E5-base；外部判别器用于步级等价/事实校验；温度设置与 checkpoint 策略详述。:contentReference[oaicite:8]"
+        },
+        "Results & Analysis": {
+            "page": 7,
+            "description": "HiPRAG 在 7 基准上平均准确率 65.4%（3B）与 67.2%（7B），显著超越强基线；OSR 从 >27% 降至 2.3%，USR 同时下降；方法对模型家族、大小与 RL 算法具普适性。:contentReference[oaicite:9]"
+        },
+        "Conclusion": {
+            "page": 10,
+            "description": "强调：优化“过程”本身而非仅最终答案，可同时提升正确性与效率；支持广泛迁移与通用性，代码将于录用后开源。:contentReference[oaicite:10]"
+        },
+        "Appendix": {
+            "page": 12,
+            "description": "包含格式解析伪代码、外部判别器提示词、更多实验细节与可视化（如图 1 工作流）。:contentReference[oaicite:11]"
+        }
+    },
+    "_keywords": {
+        "HiPRAG": {
+            "page": 1,
+            "description": "Hierarchical Process Rewards for Efficient Agentic RAG；本文方法名。:contentReference[oaicite:12]"
+        },
+        "Over-search / Under-search": {
+            "page": 1,
+            "description": "分别指冗余检索与该检索未做导致的事实/逻辑错误；本文提供在线检测并纳入奖励。:contentReference[oaicite:13]"
+        },
+        "Process Reward (分层过程奖励)": {
+            "page": 3,
+            "description": "在答案正确与格式合规时，对最优步骤比例 N_corr/N 给予线性加成的奖励结构。:contentReference[oaicite:14]"
+        },
+        "CEM / OSR / USR": {
+            "page": 5,
+            "description": "Cover Exact Match 作为主准确率指标；Over/Under-search 比率度量检索效率。:contentReference[oaicite:15]"
+        },
+        "PPO / GRPO": {
+            "page": 6,
+            "description": "用于训练的 RL 算法；报告 PPO 主结果并展示 GRPO 的可迁移性。:contentReference[oaicite:16]"
+        },
+        "Qwen2.5 / Llama-3.2": {
+            "page": 6,
+            "description": "主要实验模型家族与规模（3B/7B）。:contentReference[oaicite:17]"
+        },
+        "Search-R1 / ReAct（参考基线）": {
+            "page": 2,
+            "description": "代表性 agentic RAG 与推理-行动框架，用于对比。:contentReference[oaicite:18]"
+        },
+        "IDEA（参考结构与相关背景）": {
+            "page": 1,
+            "description": "本 JSON 结构参照 IDEA 的 meta.json；IDEA 论文为交互式规则学习/溯因-演绎-归纳框架。:contentReference[oaicite:19] :contentReference[oaicite:20]"
+        }
+    }
+}

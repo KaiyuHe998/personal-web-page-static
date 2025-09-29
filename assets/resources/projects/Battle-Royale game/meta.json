@@ -1,0 +1,18 @@
+{
+    "description": "该项目是一款 Top‑down 2D 像素风格的多人在线派对类 Battle‑royale 游戏，目前仍在持续开发中，由 Spectrum Forge 游戏开发社区 共同设计和构建，其创作者“Chongyang”领导该社区开展相关工作。我在这个项目中担任玩法设计师",
+    "project_type": "outside link",
+    "src_file": "https://garythekid.github.io/project-topdownPixel.html",
+    "portfolio_src": [
+        "../projects/Battle-Royale game/topdown_2d.gif"
+    ],
+    "portfolio_marker": [
+        "Physics",
+        "3D Game",
+        "Unity",
+        "C#"
+    ],
+    "portfolio_marker_highlight": [
+        "On going"
+    ],
+    "title": "Battle-Royale game"
+}

@@ -1,0 +1,117 @@
+{
+    "title": "Contact tracing",
+    "description": "研究纽约市在 2020-10-01 至 2021-05-10 期间 COVID-19 案例调查电话访谈的完成率（79.4%），采用对数二项回归和随机森林分析年龄、拨打时间段及邮编层面的人口与社会经济因素的影响，并通过反事实实验评估基于模型选择拨打时间对提升完成率的潜在收益（全市平均 +1.2%，部分邮编最高 +7.8%）。",
+    "project_type": "pdf",
+    "src_file": "contact_tracing_paper.pdf",
+    "portfolio_src": [
+        "../publications/Contact tracing/Fig1.png",
+        "../publications/Contact tracing/Fig2.png",
+        "../publications/Contact tracing/Fig3.png"
+    ],
+    "portfolio_marker": [
+        "Public Health",
+        "Epidemiology",
+        "Contact Tracing",
+        "Survey Methods",
+        "Machine Learning"
+    ],
+    "portfolio_marker_highlight": [
+        "BMC Public Health 2024"
+    ],
+    "_chapters": {
+        "Abstract": {
+            "page": 1,
+            "description": "研究目的：识别影响完成率的因素并评估预测模型；数据覆盖 742,807 次案例调查电话；主要结果：老年（>65）与青少年（≤24）完成率分别较基准组低 12.1% 与 1.6%；18–21 点拨打完成率较 12–15 点高 4.1%；随机森林用于选择最佳拨打时间在部分区域带来显著提升。"
+        },
+        "Introduction": {
+            "page": 2,
+            "description": "回顾 COVID-19 接触者追踪在疫情应对中的作用及纽约市 ‘Test & Trace’ 计划；强调完成率对追踪效果的重要性与优化拨打策略的必要性。"
+        },
+        "Methods": {
+            "page": 2,
+            "description": "数据来源与口径、统计建模（对数二项回归）与预测建模（随机森林）、反事实评估流程。"
+        },
+        "Data": {
+            "page": 2,
+            "description": "对象：PCR/抗原确诊与符合 CSTE 定义的可能病例；时间窗 2020-10-01 至 2021-05-10，共 742,807 条记录；变量含年龄、居住 ZIP、拨打时间段及 ZIP 层面的人口与社会经济数据。"
+        },
+        "Regression model": {
+            "page": 3,
+            "description": "对数二项回归，以完成与否为因变量；自变量包括年龄分组、拨打时间段、ZIP 层面的人口与社会经济特征；连续变量标准化。"
+        },
+        "Predictive model": {
+            "page": 3,
+            "description": "随机森林预测 ‘ZIP×年龄组×时间段’ 的平均完成率；80/20 训练-验证划分；500 棵树，节点最小样本数 5；置换重要度评估变量贡献。"
+        },
+        "Counterfactual experiment": {
+            "page": 4,
+            "description": "为验证集每个个体生成 4 个不同时间段的反事实记录，比较模型推荐时间与实际拨打时间，估计采用推荐时间的完成率变化。"
+        },
+        "Results": {
+            "page": 4,
+            "description": "总体接通率 89%，完成率 79.4%；完成率随时间段变化相对稳定，晚间 18–21 点最高；ZIP 间完成率差异显著（约 69.3%–87.3%）。"
+        },
+        "Basic statistics of case investigation": {
+            "page": 4,
+            "description": "展示年龄与时间段的通话量和完成率分布（图 1）；地理分布差异（图 2），提示老年人在中午前完成率更低。"
+        },
+        "Factors associated with completion rates": {
+            "page": 5,
+            "description": "ZIP 中 %Black、%Hispanic 与中位收入与完成率正相关，家庭规模负相关；与 24–65 岁组相比，>65 岁 PR=0.879（-12.1%），≤24 岁 PR=0.984（-1.6%）；18–21 点 PR=1.041（+4.1%），9–12 点 PR=1.023（+2.3%）。"
+        },
+        "Improving completion rate using machine learning": {
+            "page": 6,
+            "description": "随机森林外部验证 RMSE≈0.066；年龄与拨打时间是最重要特征；模型推荐将更多通话安排在 18–21 点；全市平均完成率提升约 +1.2%，部分 ZIP 最高 +7.8%。"
+        },
+        "Discussion": {
+            "page": 7,
+            "description": "建议根据年龄与社区差异优化拨打时间与排班，尤其避免在 15 点前拨打给老年人；探讨使用机器学习辅助资源调度的可行性与伦理问题。"
+        },
+        "Limitations": {
+            "page": 7,
+            "description": "个体层变量有限；反事实预测不等同于真实部署效果；无法区分社区参与专员与接线员影响。"
+        },
+        "Funding / Data & Materials / Ethics": {
+            "page": 7,
+            "description": "资助来源：NIH、CDC、NSF；数据可用性与访问限制；伦理与知情同意（IRB AAAT2182）。"
+        },
+        "Acknowledgements": {
+            "page": 7,
+            "description": "致谢纽约市团队与相关贡献者。"
+        },
+        "References": {
+            "page": 8,
+            "description": "参考文献列表。"
+        },
+        "Supplementary Information": {
+            "page": 7,
+            "description": "在线附加材料说明（Additional file 1）。"
+        }
+    },
+    "_keywords": {
+        "Contact Tracing": {
+            "page": 1,
+            "description": "识别与确诊病例有密切接触者并实施干预的公共卫生流程；本文关注电话问卷完成率。"
+        },
+        "Case Investigation": {
+            "page": 2,
+            "description": "针对确诊或可能病例进行电话访谈以收集接触者与暴露信息；状态包括尝试、接通、完成。"
+        },
+        "Index Case": {
+            "page": 1,
+            "description": "需接受病例调查的首个确诊/可能病例个体。"
+        },
+        "Log-binomial Regression": {
+            "page": 3,
+            "description": "用于直接估计相对比值（PR）的回归模型，适合二分类结果分析。"
+        },
+        "Random Forest": {
+            "page": 3,
+            "description": "集成学习算法，通过多棵决策树的多数投票进行预测，并可提供变量重要性排序。"
+        },
+        "Counterfactual Analysis": {
+            "page": 4,
+            "description": "构造假设情境以估计若改变特定变量（如拨打时间）结果可能变化的分析方法。"
+        }
+    }
+}

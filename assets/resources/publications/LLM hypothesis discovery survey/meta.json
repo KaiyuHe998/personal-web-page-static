@@ -1,0 +1,112 @@
+{
+    "title": "LLM hypothesis discovery survey",
+    "description": "本综述以皮尔斯（Peirce）的溯因–演绎–归纳三段式为主线，系统梳理了 假设发现/规则学习在LLM中的研究版图：分别综述了假设生成（溯因）、假设应用（演绎）、假设验证（归纳）的代表方法、评测与局限，并进一步讨论了将三者整合为迭代闭环以实现真正的从推理到学习的研究方向。Kaiyu He/何开宇为这篇论文的第一作者",
+    "project_type": "pdf",
+    "src_file": "../publications/LLM hypothesis discovery survey/../publications/LLM hypothesis discovery survey/../publications/LLM hypothesis discovery survey/../publications/LLM hypothesis discovery survey/../publications/LLM hypothesis discovery survey/../publications/LLM hypothesis discovery survey/../publications/LLM hypothesis discovery survey/../publications/LLM hypothesis discovery survey/reasoning_survey_paper.pdf",
+    "portfolio_src": [
+        "../publications/LLM hypothesis discovery survey/Fig1.png",
+        "../publications/LLM hypothesis discovery survey/Fig2.png",
+        "../publications/LLM hypothesis discovery survey/Fig3.png",
+        "../publications/LLM hypothesis discovery survey/Fig4.png"
+    ],
+    "portfolio_marker": [
+        "LLM Reasoning",
+        "LLM Learning",
+        "AGI"
+    ],
+    "portfolio_marker_highlight": [
+        "TMLR survey certification"
+    ],
+    "_chapters": {
+        "Abstract": {
+            "page": 1,
+            "description": "提出问题意识：LLM已在指令跟随与演绎上进展显著，但'能否产生新知识'的开放问题尚存。文章以溯因/演绎/归纳框架统摄假设发现，综合方法与评测并指出关键缺口。"
+        },
+        "Introduction": {
+            "page": 1,
+            "description": "界定'假设发现/规则学习'与其在人类智能中的核心地位；指出IBE范式的含糊之处并采用皮尔斯框架：以溯因生成解释性假设、以演绎应用假设得出预测、以归纳据新证据更新置信。"
+        },
+        "Background (2)": {
+            "page": 2,
+            "description": "回顾符号AI在演绎上的适配性与在溯因/归纳上的不足；说明LLM依赖广泛常识使得可行地研究可撤销推理（defeasible reasoning），从而重塑研究格局。"
+        },
+        "Reasoning (2.2)": {
+            "page": 3,
+            "description": "形式化区分三类推理：溯因用于生成新解释；演绎强调'依规则一致推导'（含反事实与不熟悉场景）；归纳用于基于新观测更新假设置信或在候选中择优。"
+        },
+        "Rule Representation: Formal vs Natural (2.3)": {
+            "page": 4,
+            "description": "对比自然语言与形式语言（FOL/代码）：前者保留语义细腻与常识但确定性弱；后者推理可验证且确定，但表达力受限、对溯因/归纳不友好。"
+        },
+        "Related Surveys (3)": {
+            "page": 5,
+            "description": "指出既有综述与基准大多聚焦演绎任务，缺乏覆盖溯因/归纳及其互依关系的系统框架；本综述转而以'推理为中心'的纵向视角统合三类推理。"
+        },
+        "Hypothesis Generation (4)": {
+            "page": 6,
+            "description": "方法纵览：自然语言假设生成（提示式、RAG式、人机协同）与形式语言假设生成（以代码/逻辑为载体、可执行验证）；评测包括隐式预测式、人评/LLM评、与基于真值的匹配；讨论自然语言开放性评测难与形式任务'过于玩具化'的张力。"
+        },
+        "Hypothesis Application (5)": {
+            "page": 10,
+            "description": "聚焦自然语言场景的'依规则推导'：LLM作为形式解析器（NL→FOL/代码+求解器）、微调增强、专用提示策略。评测多为结果一致性；强调反事实规则与不熟悉域中的一致推导能力。"
+        },
+        "Hypothesis Validation (6)": {
+            "page": 11,
+            "description": "归纳用于判别/更新假设置信：形式语言可程序化验证；自然语言验证涉常识与语义歧义，常采用二分类、选择题、强弱化子句判断等。提出需更丰富的中间推理轨迹与一致性评测。"
+        },
+        "Integrated Hypothesis Discovery (7)": {
+            "page": 14,
+            "description": "整环视角：被动型（数据给定、外部程序更新置信）、主动型（基于参数记忆生成支持/反驳证据、Wason卡片等最小行动空间）、真实世界模拟（实验行动空间更丰富的交互环境）。指出动作粒度与'知识泄漏'问题。"
+        },
+        "Summary (8)": {
+            "page": 17,
+            "description": "总结：需构建逼真的动态环境与可复现评测，桥接自然/形式表示的表达力与可验证性矛盾；推动'溯因→演绎→归纳'闭环中的过程一致性与外推能力评估。"
+        }
+    },
+    "_keywords": {
+        "Hypothesis Discovery & Rule Learning": {
+            "page": 1,
+            "description": "围绕O→h→预测→验证的迭代过程，目标是生成、应用并验证可解释的新知识。"
+        },
+        "Abduction": {
+            "page": 3,
+            "description": "为观测生成解释性假设，是唯一能'提出新想法'的推理形式。"
+        },
+        "Deduction": {
+            "page": 3,
+            "description": "在给定假设下进行一致推导，强调规则一致性，含反事实与陌生域的严格推导。"
+        },
+        "Induction": {
+            "page": 3,
+            "description": "依据新增证据更新假设置信或在候选中选择，非生成新解释。"
+        },
+        "Defeasible Reasoning": {
+            "page": 2,
+            "description": "可撤销推理：结论可随新证据修正，涵盖溯因与归纳。"
+        },
+        "Formal Representation & Natural Representation": {
+            "page": 4,
+            "description": "形式语言可验证且确定；自然语言贴近认知但语义可变、确定性弱。"
+        },
+        "NL Hypothesis Generation": {
+            "page": 6,
+            "description": "提示少样本、检索增强、人与LLM协同生成更可行/新颖的自然语言假设。"
+        },
+        "Formal Hypothesis Generation": {
+            "page": 7,
+            "description": "以代码/逻辑生成为主，能执行验证；但常见任务偏合成与简化。"
+        },
+        "LLM as Formal Parser": {
+            "page": 10,
+            "description": "先将自然语言假设解析为FOL或代码，再用确定性引擎推导，显著提升演绎正确性。"
+        },
+        "Passive Hypothesis Discovery": {
+            "page": 14,
+            "description": "在有真值数据上迭代生成与筛选假设；局限在于依赖外部答案。"
+        },
+        "Proactive Hypothesis Discovery": {
+            "page": 15,
+            "description": "主动生成支持/反驳证据并聚合一致子集，或直接比较证据强弱以裁决假设。"
+        }
+    }
+}
