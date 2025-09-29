@@ -3,6 +3,7 @@
     "description": "提出 HiPRAG：一种分层过程奖励（hierarchical process rewards）用于高效 Agentic RAG 的训练框架。通过将推理轨迹解析为离散步骤，并在答案正确与格式合规的前提下，对每个搜索/非搜索步骤的“最优性”给予额外奖励，从而同时降低 over-search 与 under-search，比强基线在 7 个 QA 基准上取得更高准确率并显著提升搜索效率。:contentReference[oaicite:0]（结构与字段仿照 IDEA 的 meta.json 模板整理。:contentReference[oaicite:1]）",
     "project_type": "pdf",
     "src_file": "/mnt/data/Efficient RAG.pdf",
+    "outside_link":null,
     "portfolio_src": [
         "../publications/Eifficient RAG/Fig1.png",
         "../publications/Eifficient RAG/Fig2.png",

@@ -391,6 +391,29 @@ code{
       const card = document.createElement('div');
       card.className = 'card';
 
+      // Add click handler for outside_link
+      if (project.outside_link && project.outside_link !== null && project.outside_link !== '') {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', (e) => {
+          // Prevent click if clicking on interactive elements
+          if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+            return;
+          }
+          window.open(project.outside_link, '_blank');
+        });
+        
+        // Add visual indication that the card is clickable
+        card.style.transition = 'transform 0.2s ease, box-shadow 0.2s ease';
+        card.addEventListener('mouseenter', () => {
+          card.style.transform = 'translateY(-4px)';
+          card.style.boxShadow = '0 12px 40px rgba(17,185,145,0.2)';
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'translateY(-2px)';
+          card.style.boxShadow = '0 8px 32px rgba(17,185,145,0.1)';
+        });
+      }
+
       // Highlighted markers first
       if (project.portfolio_marker_highlight && project.portfolio_marker_highlight.length > 0) {
         const highlightBadges = document.createElement('div');
@@ -444,14 +467,6 @@ code{
         card.appendChild(badges);
       }
 
-      // Description (optional)
-      if (project.description) {
-        const desc = document.createElement('p');
-        desc.className = 'muted';
-        desc.textContent = project.description;
-        card.appendChild(desc);
-      }
-
       // Initialize carousel if multiple images
       if (images.length > 1) {
         new ImageCarousel(imageContainer, images);
@@ -460,29 +475,90 @@ code{
       return card;
     }
 
-    // Load and render projects
-    async function loadProjects() {
+    // Load individual project data from meta.json files
+    async function loadIndividualProjects() {
+      const projects = [];
+      const publications = [];
+      
       try {
+        // First, get the construct_meta.json to get the list of projects
         const response = await fetch('./construct_meta.json');
         const data = await response.json();
-
-        // Render publications
-        const publicationsGrid = document.getElementById('publications-grid');
-        data.publications.forEach(publication => {
-          const card = createProjectCard(publication);
-          publicationsGrid.appendChild(card);
-        });
-
-        // Render projects
-        const projectsGrid = document.getElementById('projects-grid');
-        data.projects.forEach(project => {
-          const card = createProjectCard(project);
-          projectsGrid.appendChild(card);
-        });
-
+        
+        // Load individual meta.json files for projects
+        for (const project of data.projects) {
+          try {
+            // Extract folder name from portfolio_src path
+            const firstSrc = project.portfolio_src[0];
+            const folderMatch = firstSrc.match(/\.\.\/projects\/([^\/]+)\//);
+            if (folderMatch) {
+              const folderName = folderMatch[1];
+              const metaResponse = await fetch(`../projects/${folderName}/meta.json`);
+              if (metaResponse.ok) {
+                const individualMeta = await metaResponse.json();
+                projects.push(individualMeta);
+              } else {
+                // Fallback to construct_meta data if individual meta.json not found
+                projects.push(project);
+              }
+            } else {
+              projects.push(project);
+            }
+          } catch (error) {
+            console.warn(`Failed to load individual meta for project: ${project.title}`, error);
+            projects.push(project); // Fallback to construct_meta data
+          }
+        }
+        
+        // Load individual meta.json files for publications
+        for (const publication of data.publications) {
+          try {
+            // Extract folder name from portfolio_src path
+            const firstSrc = publication.portfolio_src[0];
+            const folderMatch = firstSrc.match(/\.\.\/publications\/([^\/]+)\//);
+            if (folderMatch) {
+              const folderName = folderMatch[1];
+              const metaResponse = await fetch(`../publications/${folderName}/meta.json`);
+              if (metaResponse.ok) {
+                const individualMeta = await metaResponse.json();
+                publications.push(individualMeta);
+              } else {
+                // Fallback to construct_meta data if individual meta.json not found
+                publications.push(publication);
+              }
+            } else {
+              publications.push(publication);
+            }
+          } catch (error) {
+            console.warn(`Failed to load individual meta for publication: ${publication.title}`, error);
+            publications.push(publication); // Fallback to construct_meta data
+          }
+        }
+        
+        return { projects, publications };
       } catch (error) {
         console.error('Failed to load projects:', error);
+        return { projects: [], publications: [] };
       }
+    }
+
+    // Load and render projects
+    async function loadProjects() {
+      const { projects, publications } = await loadIndividualProjects();
+
+      // Render publications
+      const publicationsGrid = document.getElementById('publications-grid');
+      publications.forEach(publication => {
+        const card = createProjectCard(publication);
+        publicationsGrid.appendChild(card);
+      });
+
+      // Render projects
+      const projectsGrid = document.getElementById('projects-grid');
+      projects.forEach(project => {
+        const card = createProjectCard(project);
+        projectsGrid.appendChild(card);
+      });
     }
 
     // Initialize when DOM is loaded

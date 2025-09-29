@@ -3,6 +3,7 @@
     "description": "提出面向溯因推理（Abduction）的通用、自动化、透明且无需金标准标签的评测框架 GEAR，从三大维度对一组假设进行评价：一致性（Consistency）、可泛化性（Generalizability）与多样性（Diversity）。基于四个常用数据集（MINI-ARC、ACRE、LIST FUNCTIONS、ARC-2025）与九个LLM，共生成 50,340 个候选假设并开展细粒度比较；结果显示金标准式评测易掩盖多解性，且大模型并不必然带来更高的多样性。进一步提出“动量式课程学习”策略，利用 GEAR 衍生的训练信号在无金标监督下提升一致性、可泛化性与多样性，并把收益迁移到现有溯因基准。",
     "project_type": "pdf",
     "src_file": "",
+    "outside_link":"https://github.com/KaiyuHe998/GEAR-Abduction_evaluation",
     "portfolio_src": [
         "../publications/Abductive Reasoning Evaluation/Fig1.png",
         "../publications/Abductive Reasoning Evaluation/Fig2.png",

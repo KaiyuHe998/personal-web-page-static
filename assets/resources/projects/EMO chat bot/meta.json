@@ -3,6 +3,7 @@
     "description": "这是一款“会读心还会嘴硬”的聊天机器人项目，灵感来自Representation Engineering (RepE) 技术，但我们加料：情绪数据、真假判别、角色扮演，目的就是让LLM既能安慰你，也能在你调侃它时原地开喷🤬。通过PCA提取语义向量，直接操纵模型内部状态，让它像开EQ调音台一样随时切换心情，既能温柔细语，也能Joker式阴阳怪气。",
     "project_type": "pdf",
     "src_file": "EMO chat bot.pdf",
+    "outside_link": "https://github.com/KaiyuHe998/LLM-decorator-an-interesting-friend",
     "portfolio_src": [
         "../projects/EMO chat bot/Fig1.png",
         "../projects/EMO chat bot/Fig2.png",

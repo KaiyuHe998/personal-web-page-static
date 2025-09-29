@@ -3,6 +3,7 @@
     "description": "研究纽约市在 2020-10-01 至 2021-05-10 期间 COVID-19 案例调查电话访谈的完成率（79.4%），采用对数二项回归和随机森林分析年龄、拨打时间段及邮编层面的人口与社会经济因素的影响，并通过反事实实验评估基于模型选择拨打时间对提升完成率的潜在收益（全市平均 +1.2%，部分邮编最高 +7.8%）。",
     "project_type": "pdf",
     "src_file": "contact_tracing_paper.pdf",
+    "outside_link":"https://pubmed.ncbi.nlm.nih.gov/38331772/",
     "portfolio_src": [
         "../publications/Contact tracing/Fig1.png",
         "../publications/Contact tracing/Fig2.png",

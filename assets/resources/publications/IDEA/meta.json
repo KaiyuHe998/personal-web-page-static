@@ -3,6 +3,7 @@
     "description": "使用了皮尔斯的对于reasoning的定义, Abduction, Deduction, Induction 促进LLM agent学习和掌握新知识的能力,主要目的想要探究目前的LLM是否真的具有像人类一样自主探索发现新的知识的能力,我是这篇论文的第一作者，完成了所有的论文写作与实验。",
     "project_type": "pdf",
     "src_file": "../publications/IDEA/../publications/IDEA/../publications/IDEA/../publications/IDEA/../publications/IDEA/../publications/IDEA/../publications/IDEA/../publications/IDEA/IDEA_paper.pdf",
+    "outside_link":"https://arxiv.org/abs/2408.10455",
     "portfolio_src": [
         "../publications/IDEA/Fig1.png",
         "../publications/IDEA/Fig2.png",

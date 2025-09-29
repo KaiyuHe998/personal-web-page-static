@@ -3,6 +3,7 @@
     "description": "本综述以皮尔斯（Peirce）的溯因–演绎–归纳三段式为主线，系统梳理了 假设发现/规则学习在LLM中的研究版图：分别综述了假设生成（溯因）、假设应用（演绎）、假设验证（归纳）的代表方法、评测与局限，并进一步讨论了将三者整合为迭代闭环以实现真正的从推理到学习的研究方向。Kaiyu He/何开宇为这篇论文的第一作者",
     "project_type": "pdf",
     "src_file": "../publications/LLM hypothesis discovery survey/../publications/LLM hypothesis discovery survey/../publications/LLM hypothesis discovery survey/../publications/LLM hypothesis discovery survey/../publications/LLM hypothesis discovery survey/../publications/LLM hypothesis discovery survey/../publications/LLM hypothesis discovery survey/../publications/LLM hypothesis discovery survey/reasoning_survey_paper.pdf",
+    "outside_link":"https://arxiv.org/abs/2505.21935",
     "portfolio_src": [
         "../publications/LLM hypothesis discovery survey/Fig1.png",
         "../publications/LLM hypothesis discovery survey/Fig2.png",
